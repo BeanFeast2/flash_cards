@@ -5,6 +5,10 @@ class CardGenerator
   def initialize(lines)
     @cards = []
     @category_arr = []
+    generate_cards(lines)
+  end
+
+  def generate_cards(lines)
     lines.each do |line|
       columns = line.split(',')
       question = columns[0]
