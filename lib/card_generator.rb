@@ -2,13 +2,14 @@ require './lib/card'
 
 class CardGenerator
   attr_accessor :cards, :category_arr
-  def initialize(lines)
+  def initialize(file_name)
     @cards = []
     @category_arr = []
-    generate_cards(lines)
+    generate_cards(file_name)
   end
 
-  def generate_cards(lines)
+  def generate_cards(file_name)
+    lines = File.readlines(file_name)
     lines.each do |line|
       columns = line.split(',')
       question = columns[0]
