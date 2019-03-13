@@ -6,7 +6,7 @@ class Round
     @turns = []
     @turn_index = 0
   end
-
+  #start game
   def start(categories)
     #welcome message
     p "Welcome! You're playing with #{self.deck.cards.length} cards."
