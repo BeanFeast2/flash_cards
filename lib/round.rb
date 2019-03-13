@@ -1,9 +1,32 @@
+
 class Round
   attr_accessor :deck, :turns, :turn_index
   def initialize(deck)
     @deck = deck
     @turns = []
     @turn_index = 0
+  end
+
+  def start(categories)
+    #welcome message
+    p "Welcome! You're playing with #{self.deck.cards.length} cards."
+    p '-' * 40
+    #game loop until all cards are iterated through
+    until self.turn_index == self.deck.cards.length
+      p "This is card #{self.turn_index + 1} out of #{self.deck.cards.length}"
+      p "Question: #{self.current_card.question}"
+      input = gets.chomp.downcase
+      self.take_turn(input)
+      p self.turns[self.turn_index - 1].feedback
+      p '-' * 40 if self.turn_index != self.deck.cards.length
+    end
+    #end of game message with stats
+    p '*' * 20 + "Game Over!" + '*' * 20
+    p "You had #{self.number_correct} correct guesses out of #{self.deck.cards.length} for a total score of #{self.percent_correct.round(2)}%"
+    #prints each category and percentage of correct answers per category
+    categories.each do |category|
+      p "#{category} - #{self.percent_correct_by_category(category.delete(' ').to_sym)}%"
+    end
   end
 
   def current_card
