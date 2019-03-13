@@ -21,10 +21,6 @@ class Round
     @turns.count{|turn| turn.correct?}
   end
 
-  def number_in_category(category)
-    @turns.count{|turn| turn.card.category == category}
-  end
-
   def number_correct_by_category(category)
     correct = 0
     @turns.each do |turn|
@@ -40,6 +36,6 @@ class Round
   end
 
   def percent_correct_by_category(category)
-    (self.number_correct_by_category(category) / self.number_in_category(category).to_f) * 100
+    (self.number_correct_by_category(category) / self.deck.cards_in_category(category).length.to_f) * 100
   end
 end
