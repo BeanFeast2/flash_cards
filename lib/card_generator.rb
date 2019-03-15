@@ -11,8 +11,10 @@ class CardGenerator
   def generate_cards(file_name)
     lines = File.readlines(file_name)
     lines.each do |line|
+      next if line.split(',').length != 3
       columns = line.split(',')
       question = columns[0]
+      #allows answer to match despite case
       answer = columns[1].downcase
       category = columns[2].delete(' ')[0..-2].to_sym
       category_string = columns[2][0..-2]

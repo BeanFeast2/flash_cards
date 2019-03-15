@@ -22,6 +22,7 @@ def start(round, categories)
   until round.turn_index == round.deck.cards.length
     p "This is card #{round.turn_index + 1} out of #{round.deck.cards.length}"
     p "Question: #{round.current_card.question}"
+    #allows input to match answer despite case
     input = gets.chomp.downcase
     round.take_turn(input)
     p round.turns[round.turn_index - 1].feedback
