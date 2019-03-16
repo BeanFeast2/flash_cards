@@ -2,17 +2,15 @@ require './lib/card'
 require './lib/turn'
 require './lib/deck'
 require './lib/round'
-require './lib/card_generator'
+require './lib/loader'
 require 'pry'
 
-generator = CardGenerator.new('cards.txt')
+generator = Loader.new('cards.txt').generator
 cards = generator.cards
-#creates category array to iterate through
-$categories = generator.category_arr
-#deletes duplicate categories in array
-$categories.uniq!
 deck = Deck.new(cards)
 $round = Round.new(deck)
+$categories = generator.category_arr
+$categories.uniq!
 
 def start
   #welcome message

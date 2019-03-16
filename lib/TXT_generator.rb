@@ -1,6 +1,6 @@
 require './lib/card'
 
-class CardGenerator
+class TXTGenerator
   attr_accessor :cards, :category_arr
   def initialize(file_name)
     @cards = []
