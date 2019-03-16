@@ -1,7 +1,7 @@
 What is 5 + 5?,10,STEM
 What is Rachel's favorite animal?,red panda,Turing Staff
 What is Mike's middle name?,nobody knows,Turing Staff
-What cardboard cutout lives at Turing?,Justin bieber,PopCulture
+What cardboard cutout lives at Turing?,Justice biever,PopCulture
 What is a commonly used substitute for wasabi?,ginger,Food
 How should a filet always be cooked,medium rare,Food
 WHAAA
