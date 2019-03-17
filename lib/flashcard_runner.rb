@@ -9,8 +9,7 @@ reader = Loader.new('cards.yml').reader
 cards = reader.cards
 deck = Deck.new(cards)
 $round = Round.new(deck)
-$categories = reader.category_arr
-$categories.uniq!
+$categories = reader.category_arr.uniq!
 
 def start
   #welcome message
