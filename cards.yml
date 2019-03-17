@@ -1,0 +1,17 @@
+
+cards:
+    - question:   What is 5 + 5?
+      answer:     10
+      category:   STEM
+
+    - question:   What is Rachel's favorite animal?
+      answer:     red panda
+      category:   Turing Staff
+
+    - question:   What is Mike's middle name?
+      answer:     nobody knows
+      category:   Turing Staff
+
+    - question:   What cardboard cutout lives at Turing?
+      answer:     Justin bieber
+      category:   PopCulture

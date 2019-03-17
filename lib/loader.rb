@@ -1,12 +1,15 @@
-require './lib/TXT_generator'
+require './lib/TXT_reader'
+require './lib/YML_reader'
 require 'pry'
 
 class Loader
-  attr_accessor :generator
+  attr_accessor :reader
   def initialize(file_name)
     case file_name[-4..-1]
     when '.txt'
-      @generator = TXTGenerator.new(file_name)
+      @reader = TxtReader.new(file_name)
+    when '.yml'
+      @reader = YmlReader.new(file_name)
     end
   end
 end

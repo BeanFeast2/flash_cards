@@ -5,11 +5,11 @@ require './lib/round'
 require './lib/loader'
 require 'pry'
 
-generator = Loader.new('cards.txt').generator
-cards = generator.cards
+reader = Loader.new('cards.yml').reader
+cards = reader.cards
 deck = Deck.new(cards)
 $round = Round.new(deck)
-$categories = generator.category_arr
+$categories = reader.category_arr
 $categories.uniq!
 
 def start
