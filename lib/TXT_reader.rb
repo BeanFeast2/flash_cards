@@ -1,15 +1,14 @@
 require './lib/card'
-
-class TXTGenerator
+class TxtReader
   attr_accessor :cards, :category_arr
-  def initialize(file_name)
+  def initialize(file)
     @cards = []
     @category_arr = []
-    generate_cards(file_name)
+    generate_cards(file)
   end
 
-  def generate_cards(file_name)
-    lines = File.readlines(file_name)
+  def generate_cards(file)
+    lines = File.readlines(file)
     lines.each do |line|
       next if line.split(',').length != 3
       columns = line.split(',')
