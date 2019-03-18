@@ -15,7 +15,6 @@ class ApiReader
 
   def generate_cards(file)
     file = HTTParty.get(file)
-    binding.pry
     file.parsed_response.values[1].each do |card|
       #Removes odd characters from question string and saves to question
       question = CGI::unescapeHTML(card['question'])
