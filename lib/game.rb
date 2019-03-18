@@ -1,9 +1,25 @@
 class Game
+  attr_reader :input
+  def initialize
+    @input = ''
+    get_filetype
+  end
   def start(categories, round)
     print_welcome(round)
     game_loop(round)
     print_end_message(round)
     print_stats(round, categories)
+  end
+
+  def get_filetype
+    p "What kind of input would you like to use?"
+    until @input == 'txt' || @input == 'yml' || @input == 'api'
+      p "Type One of the following"
+      p "1) API"
+      p "2) YML"
+      p "3) TXT"
+      @input = gets.chomp.downcase
+    end
   end
 
   def print_welcome(round)
