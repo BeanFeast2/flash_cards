@@ -4,6 +4,7 @@ class Game
     @input = ''
     get_filetype
   end
+  
   def start(categories, round)
     print_welcome(round)
     game_loop(round)
